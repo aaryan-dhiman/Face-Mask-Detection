@@ -1,0 +1,46 @@
+name: Face Mask Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Pipeline (Train -> Eval -> Deploy)
+      run: |
+        python run_pipeline.py
+
+    - name: Upload Trained Model
+      uses: actions/upload-artifact@v3
+      with:
+        name: trained-model
+        path: models/mask_detector_final.keras
+
+    - name: Upload TFLite Model
+      uses: actions/upload-artifact@v3
+      with:
+        name: tflite-model
+        path: models/mask_detector.tflite
+        
+    - name: Upload Visualizations
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: outputs/

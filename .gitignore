@@ -14,8 +14,8 @@ venv/
 .idea/
 
 # Data & Models (Usually too large for GitHub)
-data/
-models/*.keras
+# data/ (Uncommenting to allow upload for GitHub Actions)
+# models/*.keras (Keep models ignored, we will generate them in CI)
 models/*.h5
 # We can allow the lightweight TFLite model if you want
 # !models/*.tflite
