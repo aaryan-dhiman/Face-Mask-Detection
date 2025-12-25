@@ -29,6 +29,7 @@ def calculate_iou(box1, box2):
 
 def evaluate():
     print("Loading Data for Evaluation...")
+    print("Using relative path 'data'...")
     imgs, targets = load_data("data")
     _, _, _, _, X_test, y_test = split_data(imgs, targets)
     
