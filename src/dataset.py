@@ -113,6 +113,6 @@ def split_data(images, targets):
     return X_train, y_train, X_val, y_val, X_test, y_test
 
 if __name__ == "__main__":
-    imgs, tgs = load_data("d:/Aaryan_DL_Lab_Assessment_Exam")
+    imgs, tgs = load_data("data")
     print(f"Images: {imgs.shape}")
     print(f"Targets: {tgs.shape}")
