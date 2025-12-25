@@ -79,7 +79,7 @@ def create_dataset(X, y, is_train=True):
 
 def main():
     print("Loading data...")
-    dataset_dir = "d:/Aaryan_DL_Lab_Assessment_Exam/data"
+    dataset_dir = "data"
     images, targets = load_data(dataset_dir)
     X_train, y_train, X_val, y_val, X_test, y_test = split_data(images, targets)
     

@@ -29,7 +29,7 @@ def calculate_iou(box1, box2):
 
 def evaluate():
     print("Loading Data for Evaluation...")
-    imgs, targets = load_data("d:/Aaryan_DL_Lab_Assessment_Exam/data")
+    imgs, targets = load_data("data")
     _, _, _, _, X_test, y_test = split_data(imgs, targets)
     
     print(f"Test Set: {len(X_test)} samples")

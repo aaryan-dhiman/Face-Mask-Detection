@@ -21,7 +21,7 @@ def visualize_with_tf():
     Demonstrates using tf.image.draw_bounding_boxes() as requested.
     """
     print("Loading Data...")
-    imgs, targets = load_data("d:/Aaryan_DL_Lab_Assessment_Exam/data")
+    imgs, targets = load_data("data")
     _, _, _, _, X_test, _ = split_data(imgs, targets)
     
     # Take a batch of 4 images
